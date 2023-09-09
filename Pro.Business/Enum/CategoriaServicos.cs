@@ -1,0 +1,27 @@
+﻿namespace Pro.Business.Enum
+{
+    public enum CategoriaServicos
+    {
+        PINTURA,
+        DEMOLICAO,
+        ALVENARIA,
+        CARPINTARIA,
+        ENCANAMENTO,
+        INSTALACAO_ELETRICA,
+        REVESTIMENTO,
+        TELHADOS_COBERTURAS,
+        ISOLAMENTO_TERMICO_ACUSTICO,
+        TERRAPLANAGEM_ESCAVACAO,
+        FUNDACOES,
+        CONCRETO_ESTRUTURAS_CONCRETO,
+        SISTEMAS_CLIMATIZACAO,
+        SISTEMAS_SEGURANCA,
+        ILUMINACAO_EXTERNA_PAISAGISMO,
+        PAVIMENTACAO_CALCADAS,
+        LIMPEZA_OBRAS,
+        SERVICOS_ENGENHARIA_PROJETO,
+        MANUTENCAO_PREDIAL,
+        OUTROS
+    }
+
+}

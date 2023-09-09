@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Pro.API.ViewModels;
 using Pro.Business.Models;
 using Pro.WebAPI.ViewModels;
 
@@ -10,6 +11,7 @@ namespace Pro.WebAPI.Configuration
         {
             CreateMap<Cliente, ClienteViewModel>().ReverseMap();
             CreateMap<Endereco, EnderecoViewModel>().ReverseMap();
+            CreateMap<Servico, ServicoViewModel>().ReverseMap();
         }
     }
 }
