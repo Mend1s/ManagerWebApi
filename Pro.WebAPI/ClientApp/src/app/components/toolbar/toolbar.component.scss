@@ -1,0 +1,36 @@
+mat-toolbar{
+  background-color: #302F3C;
+}
+
+mat-toolbar-row {
+  justify-content: space-between;
+  display: flex;
+  width: 1440px;
+  margin: 0 auto;
+  padding: 0 0;
+
+  a {
+    text-decoration: none;
+    color: white;
+
+    &:hover{
+      color: #b88e1a;
+      transition: 0.7s;
+    }
+
+    &.active{
+      color: #FFBB00;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.container_item {
+  list-style: none;
+}
