@@ -4,21 +4,20 @@ using Pro.Business.Services;
 using Pro.Data.Context;
 using Pro.Data.Repository;
 
-namespace Pro.WebAPI.Configuration
+namespace Pro.WebAPI.Configuration;
+
+public static class DependencyInjectionConfig
 {
-    public static class DependencyInjectionConfig
+    public static IServiceCollection ResolveDependecies (this IServiceCollection services)
     {
-        public static IServiceCollection ResolveDependecies (this IServiceCollection services)
-        {
-            services.AddScoped<ApiContext>();
+        services.AddScoped<ApiContext>();
 
-            services.AddScoped<IClienteRepository, ClienteRepository>();
-            services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+        services.AddScoped<IClienteRepository, ClienteRepository>();
+        services.AddScoped<IEnderecoRepository, EnderecoRepository>();
 
-            services.AddScoped<INotificador, Notificador>();
-            services.AddScoped<IClienteService, ClienteService>();
+        services.AddScoped<INotificador, Notificador>();
+        services.AddScoped<IClienteService, ClienteService>();
 
-            return services;
-        }
+        return services;
     }
 }
