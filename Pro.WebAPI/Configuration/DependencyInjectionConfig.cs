@@ -14,6 +14,7 @@ public static class DependencyInjectionConfig
 
         services.AddScoped<IClienteRepository, ClienteRepository>();
         services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+        services.AddScoped<IServicoRepository, ServicoRepository>();
 
         services.AddScoped<INotificador, Notificador>();
         services.AddScoped<IClienteService, ClienteService>();

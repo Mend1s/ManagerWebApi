@@ -45,7 +45,7 @@ public class ClienteController : MainController
     }
 
     [HttpPost]
-    [Route("AdicionarCliente")]
+    [Route("add-client")]
     public async Task<ActionResult<ClienteViewModel>> Adicionar(ClienteViewModel clienteViewModel, [FromServices] IMapper _mapper)
     {
         if (!ModelState.IsValid) { return BadRequest(ModelState); }
