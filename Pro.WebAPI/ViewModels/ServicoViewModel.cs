@@ -5,6 +5,9 @@ namespace Pro.API.ViewModels;
 
 public class ServicoViewModel
 {
+    [Key]
+    public int Id { get; set; }
+
     [Required(ErrorMessage = "O campo Nome é obrigatório.")]
     [StringLength(100, ErrorMessage = "O campo Nome deve ter no máximo {1} caracteres.")]
     public string Nome { get; set; }
