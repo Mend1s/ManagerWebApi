@@ -21,7 +21,7 @@ import { jsPDF } from "jspdf";
 export class ListClientComponent {
 
   clients!: Client[];
-  displayedColumns: string[] = ['id', 'name', 'email', 'address', 'actions'];
+  displayedColumns: string[] = ['id', 'nome', 'email', 'address', 'actions'];
   dataSource!: MatTableDataSource<Client>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

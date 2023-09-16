@@ -25,6 +25,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDividerModule } from '@angular/material/divider';
+
+
 registerLocaleData(localePt, 'pt')
 
 
@@ -51,7 +58,12 @@ registerLocaleData(localePt, 'pt')
     ReactiveFormsModule,
     MatPaginatorModule,
     MatSortModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatDividerModule
   ],
   providers: [{
     provide: DEFAULT_CURRENCY_CODE,

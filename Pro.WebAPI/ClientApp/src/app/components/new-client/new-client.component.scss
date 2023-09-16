@@ -1,13 +1,20 @@
 .container-forms {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   justify-content: center;
+  margin: 20px auto 0;
   align-items: center;
-  margin-top: 100px;
+  gap: 10px;
 
-  mat-form-field, button {
-    width: 400px;
+  p {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  mat-divider {
+    margin-bottom: 10px;
+  }
+
+  button {
+    margin-bottom: 50px;
   }
 }
-
-

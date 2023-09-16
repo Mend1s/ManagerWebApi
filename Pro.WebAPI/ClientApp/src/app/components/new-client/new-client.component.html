@@ -1,28 +1,111 @@
 <form [formGroup]="formsNewClient" class="container-forms">
   <h1 *ngIf="checkedClient; else createClient">Editar cliente</h1>
   <ng-template #createClient>
-    <h1>Cadastrar um novo cliente :)</h1>
+    <h1>Cadastro de cliente</h1>
   </ng-template>
 
-  <mat-form-field appearance="outline">
+  <p class="g-c-s3">Dados Pessoais</p>
+  <mat-divider class="g-c-s3"></mat-divider>
+
+  <mat-form-field appearance="outline" class="g-c-s3">
     <mat-label>Nome</mat-label>
-    <input matInput placeholder="Nome" formControlName="name" minlength="3" maxlength="45">
+    <input matInput placeholder="Nome" formControlName="nome" minlength="3" maxlength="45">
     <mat-error>Insira um nome válido.</mat-error>
   </mat-form-field>
 
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="outline" class="g-c-s1">
+    <mat-label>Data de Nascimento</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="g-c-s1">
+    <mat-label>Telefone</mat-label>
+    <input matInput placeholder="Ex. 11 98432-2342" formControlName="telefone" minlength="11" maxlength="14"
+      type="number">
+    <mat-error>Insira um documento válido.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="g-c-s1">
+    <mat-label>Documento</mat-label>
+    <input matInput placeholder="CPF/CNPJ" formControlName="documento" minlength="11" maxlength="14" type="number">
+    <mat-error>Insira um documento válido.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="g-c-s2">
     <mat-label>Email</mat-label>
     <input matInput placeholder="Email" formControlName="email">
     <mat-error>Insira um email válido.</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Endereço</mat-label>
-    <input matInput placeholder="Endereço" formControlName="address" minlength="10" maxlength="45">
-    <mat-error>Insira um Endereço válido.</mat-error>
+    <mat-label>Sexo</mat-label>
+    <mat-select>
+      <mat-option value="one">Masculino</mat-option>
+      <mat-option value="two">Feminino</mat-option>
+      <mat-option value="three">N/A</mat-option>
+    </mat-select>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="saveForms()" [disabled]="!formsNewClient.valid">{{ checkedClient ? 'Editar cliente' : 'Cadastrar' }}</button>
+  <p class="g-c-s3">Endereço</p>
+  <mat-divider class="g-c-s3"></mat-divider>
+
+  <div cellspacing="0" formGroupName="endereco" class="grid g-c-s3">
+
+    <mat-form-field appearance="outline" class="example-full-width" class="g-c-s3">
+      <mat-label>Logradouro</mat-label>
+      <input matInput placeholder="Ex. San Francisco" formControlName="logradouro" minlength="10" maxlength="45">
+      <mat-error>Insira um Endereço válido.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Número</mat-label>
+      <input matInput placeholder="Ex. 23" formControlName="numero">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>CEP</mat-label>
+      <input matInput #postalCode maxlength="5" placeholder="Ex. 06515-006" formControlName="cep">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Complemento</mat-label>
+      <input matInput placeholder="Ex. California" formControlName="complemento">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Bairro</mat-label>
+      <input matInput #postalCode maxlength="5" placeholder="Ex. 06515-006" formControlName="bairro">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Cidade</mat-label>
+      <input matInput placeholder="Ex. San Francisco" formControlName="cidade">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Estado</mat-label>
+      <input matInput placeholder="Ex. California" formControlName="estado">
+    </mat-form-field>
+  </div>
+
+  <p class="g-c-s3">Dados cadastro</p>
+  <mat-divider class="g-c-s3"></mat-divider>
+
+  <mat-radio-group aria-label="Selecione uma opção">
+    <mat-radio-button value="1">Pessoa Física</mat-radio-button>
+    <mat-radio-button value="2">Pessoa Jurídica</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field class="example-full-width" appearance="outline" class="g-c-s3">
+    <mat-label>Observação</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="saveForms()" [disabled]="!formsNewClient.valid" class="g-c-s3">{{ checkedClient ?
+    'Editar cliente' : 'Cadastrar' }}</button>
   <!-- <ng-template #createButtonClient>
     <h1>Cadastrar</h1>
   </ng-template> -->

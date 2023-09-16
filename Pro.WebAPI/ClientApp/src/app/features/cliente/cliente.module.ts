@@ -14,7 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { MatRadioModule } from '@angular/material/radio';
 
 
 
@@ -35,7 +35,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ReactiveFormsModule,
     MatPaginatorModule,
     MatSortModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule
   ]
 })
 export class ClienteModule { }

@@ -1,10 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Pro.API.Configuration;
 using Pro.Data.Context;
 using Pro.WebAPI.Configuration;
+using Serilog;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
+//builder.AddSerilog(builder.Configuration, "Sample JsReport");
+//Log.Information("Starting API");
 
 builder
     .Services
@@ -32,6 +36,24 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.ResolveDependecies();
 
+builder.AddJsReport();
+
+builder.Services.AddCors(options =>
+{
+    //options.AddDefaultPolicy(builder =>
+    //{
+    //    builder.WithOrigins("http://localhost:4200") // Permita solicitações do seu frontend Angular
+    //           .AllowAnyMethod()
+    //           .AllowAnyHeader();
+    //});
+
+    options.AddPolicy("Development",
+        builder => builder.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        );
+});
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -40,6 +62,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("Development");
 app.UseStaticFiles();
 app.UseRouting();
 app.UseSwagger();
